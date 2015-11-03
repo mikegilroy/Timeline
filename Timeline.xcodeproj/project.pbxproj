@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		10F252941BE9565800E1A22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252931BE9565800E1A22E /* AppDelegate.swift */; };
-		10F252961BE9565800E1A22E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252951BE9565800E1A22E /* ViewController.swift */; };
 		10F252991BE9565800E1A22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F252971BE9565800E1A22E /* Main.storyboard */; };
 		10F2529B1BE9565800E1A22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F2529A1BE9565800E1A22E /* Assets.xcassets */; };
 		10F2529E1BE9565800E1A22E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F2529C1BE9565800E1A22E /* LaunchScreen.storyboard */; };
@@ -19,12 +18,12 @@
 		10F252AF1BE95FCB00E1A22E /* AddPhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252AE1BE95FCB00E1A22E /* AddPhotoTableViewController.swift */; };
 		10F252B11BE960C300E1A22E /* LoginSignupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B01BE960C300E1A22E /* LoginSignupPickerViewController.swift */; };
 		10F252B31BE9612600E1A22E /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B21BE9612600E1A22E /* LoginSignupViewController.swift */; };
+		10F252B51BE961DC00E1A22E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B41BE961DC00E1A22E /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10F252901BE9565800E1A22E /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F252931BE9565800E1A22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10F252951BE9565800E1A22E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10F252981BE9565800E1A22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10F2529A1BE9565800E1A22E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10F2529D1BE9565800E1A22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		10F252AE1BE95FCB00E1A22E /* AddPhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewController.swift; sourceTree = "<group>"; };
 		10F252B01BE960C300E1A22E /* LoginSignupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupPickerViewController.swift; sourceTree = "<group>"; };
 		10F252B21BE9612600E1A22E /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
+		10F252B41BE961DC00E1A22E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				10F252931BE9565800E1A22E /* AppDelegate.swift */,
-				10F252951BE9565800E1A22E /* ViewController.swift */,
 				10F252971BE9565800E1A22E /* Main.storyboard */,
 				10F252A91BE95CE200E1A22E /* Views */,
+				10F252B61BE961E200E1A22E /* Model */,
 				10F2529A1BE9565800E1A22E /* Assets.xcassets */,
 				10F2529C1BE9565800E1A22E /* LaunchScreen.storyboard */,
 				10F2529F1BE9565800E1A22E /* Info.plist */,
@@ -91,6 +91,14 @@
 				10F252A51BE95C7700E1A22E /* TimelineTableViewController.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		10F252B61BE961E200E1A22E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10F252B41BE961DC00E1A22E /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,10 +174,10 @@
 			files = (
 				10F252AD1BE95EF000E1A22E /* ProfileViewController.swift in Sources */,
 				10F252AB1BE95E2A00E1A22E /* UserSearchTableViewController.swift in Sources */,
-				10F252961BE9565800E1A22E /* ViewController.swift in Sources */,
 				10F252A61BE95C7700E1A22E /* TimelineTableViewController.swift in Sources */,
 				10F252B31BE9612600E1A22E /* LoginSignupViewController.swift in Sources */,
 				10F252B11BE960C300E1A22E /* LoginSignupPickerViewController.swift in Sources */,
+				10F252B51BE961DC00E1A22E /* User.swift in Sources */,
 				10F252A81BE95CDD00E1A22E /* PostDetailTableViewController.swift in Sources */,
 				10F252941BE9565800E1A22E /* AppDelegate.swift in Sources */,
 				10F252AF1BE95FCB00E1A22E /* AddPhotoTableViewController.swift in Sources */,
