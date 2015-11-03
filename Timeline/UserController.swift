@@ -29,21 +29,21 @@ class UserController {
 //    7. Define a static function `followUser` that takes a user and completion closure with a success Boolean parameter.
     
     static func followUser(user: User, completion: (success: Bool) -> Void) {
-        
+        completion(success: true)
     }
     
     
 //    8. Define a static function `userFollowsUser` that takes a user, and a user to check against, and a completion closure with a follows Boolean parameter.
     
-    static func userFollowUser(user1: User, user2: User, completion: (follows: Bool) -> Void) {
-        
+    static func userFollowsUser(user1: User, user2: User, completion: (follows: Bool) -> Void) {
+       completion(follows: true)
     }
     
     
 //    9. Define a static function `followedByUser` that takes a user and completion closure with an optional array of Users parameter.
     
     static func followedByUser(user: User, completion: (users: [User]?) -> Void) {
-        
+        completion(users: mockUsers())
     }
     
     

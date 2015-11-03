@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10B74DCB1BE974AA009F6F52 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B74DCA1BE974AA009F6F52 /* PostController.swift */; };
 		10F252941BE9565800E1A22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252931BE9565800E1A22E /* AppDelegate.swift */; };
 		10F252991BE9565800E1A22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F252971BE9565800E1A22E /* Main.storyboard */; };
 		10F2529B1BE9565800E1A22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F2529A1BE9565800E1A22E /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10B74DCA1BE974AA009F6F52 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		10F252901BE9565800E1A22E /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F252931BE9565800E1A22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F252981BE9565800E1A22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		10F252BF1BE967C700E1A22E /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				10B74DCA1BE974AA009F6F52 /* PostController.swift */,
 				10F252BD1BE967C300E1A22E /* UserController.swift */,
 			);
 			name = "Model Controllers";
@@ -203,6 +206,7 @@
 				10F252A81BE95CDD00E1A22E /* PostDetailTableViewController.swift in Sources */,
 				10F252941BE9565800E1A22E /* AppDelegate.swift in Sources */,
 				10F252AF1BE95FCB00E1A22E /* AddPhotoTableViewController.swift in Sources */,
+				10B74DCB1BE974AA009F6F52 /* PostController.swift in Sources */,
 				10F252BA1BE9657A00E1A22E /* Comment.swift in Sources */,
 				10F252B81BE963EA00E1A22E /* Post.swift in Sources */,
 			);
@@ -352,6 +356,7 @@
 				10F252A41BE9565800E1A22E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
