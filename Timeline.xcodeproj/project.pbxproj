@@ -22,6 +22,7 @@
 		10F252B81BE963EA00E1A22E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B71BE963EA00E1A22E /* Post.swift */; };
 		10F252BA1BE9657A00E1A22E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B91BE9657A00E1A22E /* Comment.swift */; };
 		10F252BC1BE9658500E1A22E /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252BB1BE9658500E1A22E /* Like.swift */; };
+		10F252BE1BE967C300E1A22E /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252BD1BE967C300E1A22E /* UserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		10F252B71BE963EA00E1A22E /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		10F252B91BE9657A00E1A22E /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		10F252BB1BE9658500E1A22E /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		10F252BD1BE967C300E1A22E /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				10F252931BE9565800E1A22E /* AppDelegate.swift */,
 				10F252971BE9565800E1A22E /* Main.storyboard */,
 				10F252A91BE95CE200E1A22E /* Views */,
+				10F252BF1BE967C700E1A22E /* Model Controllers */,
 				10F252B61BE961E200E1A22E /* Model */,
 				10F2529A1BE9565800E1A22E /* Assets.xcassets */,
 				10F2529C1BE9565800E1A22E /* LaunchScreen.storyboard */,
@@ -108,6 +111,14 @@
 				10F252BB1BE9658500E1A22E /* Like.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		10F252BF1BE967C700E1A22E /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				10F252BD1BE967C300E1A22E /* UserController.swift */,
+			);
+			name = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 				10F252A61BE95C7700E1A22E /* TimelineTableViewController.swift in Sources */,
 				10F252B31BE9612600E1A22E /* LoginSignupViewController.swift in Sources */,
 				10F252B11BE960C300E1A22E /* LoginSignupPickerViewController.swift in Sources */,
+				10F252BE1BE967C300E1A22E /* UserController.swift in Sources */,
 				10F252B51BE961DC00E1A22E /* User.swift in Sources */,
 				10F252BC1BE9658500E1A22E /* Like.swift in Sources */,
 				10F252A81BE95CDD00E1A22E /* PostDetailTableViewController.swift in Sources */,
