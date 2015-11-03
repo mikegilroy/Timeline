@@ -19,6 +19,9 @@
 		10F252B11BE960C300E1A22E /* LoginSignupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B01BE960C300E1A22E /* LoginSignupPickerViewController.swift */; };
 		10F252B31BE9612600E1A22E /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B21BE9612600E1A22E /* LoginSignupViewController.swift */; };
 		10F252B51BE961DC00E1A22E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B41BE961DC00E1A22E /* User.swift */; };
+		10F252B81BE963EA00E1A22E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B71BE963EA00E1A22E /* Post.swift */; };
+		10F252BA1BE9657A00E1A22E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252B91BE9657A00E1A22E /* Comment.swift */; };
+		10F252BC1BE9658500E1A22E /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252BB1BE9658500E1A22E /* Like.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		10F252B01BE960C300E1A22E /* LoginSignupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupPickerViewController.swift; sourceTree = "<group>"; };
 		10F252B21BE9612600E1A22E /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
 		10F252B41BE961DC00E1A22E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		10F252B71BE963EA00E1A22E /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		10F252B91BE9657A00E1A22E /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		10F252BB1BE9658500E1A22E /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				10F252B41BE961DC00E1A22E /* User.swift */,
+				10F252B71BE963EA00E1A22E /* Post.swift */,
+				10F252B91BE9657A00E1A22E /* Comment.swift */,
+				10F252BB1BE9658500E1A22E /* Like.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -178,9 +187,12 @@
 				10F252B31BE9612600E1A22E /* LoginSignupViewController.swift in Sources */,
 				10F252B11BE960C300E1A22E /* LoginSignupPickerViewController.swift in Sources */,
 				10F252B51BE961DC00E1A22E /* User.swift in Sources */,
+				10F252BC1BE9658500E1A22E /* Like.swift in Sources */,
 				10F252A81BE95CDD00E1A22E /* PostDetailTableViewController.swift in Sources */,
 				10F252941BE9565800E1A22E /* AppDelegate.swift in Sources */,
 				10F252AF1BE95FCB00E1A22E /* AddPhotoTableViewController.swift in Sources */,
+				10F252BA1BE9657A00E1A22E /* Comment.swift in Sources */,
+				10F252B81BE963EA00E1A22E /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

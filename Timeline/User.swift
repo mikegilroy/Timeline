@@ -15,16 +15,14 @@ struct User: Equatable {
     var url: String? = nil
     var userID: String
     
-    init(username: String, bio: String, url: String, userID: String) {
+    init(username: String, bio: String?, url: String?, userID: String) {
         
         self.username = username
         self.bio = bio
         self.url = url
         self.userID = userID
     }
-    
 }
-
 
 // Equatable protocol
 func == (user1: User, user2: User) -> Bool {
