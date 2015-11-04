@@ -125,32 +125,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UyM-Np-Qgi">
                                 <rect key="frame" x="20" y="108" width="560" height="267"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhd-Fs-k5T">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqz-XF-Qva">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="28"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqz-XF-Qva">
-                                        <rect key="frame" x="0.0" y="48" width="560" height="27.5"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhd-Fs-k5T">
+                                        <rect key="frame" x="0.0" y="48" width="560" height="28"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3oP-xg-Y7V">
-                                        <rect key="frame" x="0.0" y="95.5" width="560" height="28"/>
+                                        <rect key="frame" x="0.0" y="96" width="560" height="28"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-To-yvA">
-                                        <rect key="frame" x="0.0" y="143.5" width="560" height="28"/>
+                                        <rect key="frame" x="0.0" y="144" width="560" height="28"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uL5-rB-HQQ">
-                                        <rect key="frame" x="0.0" y="191.5" width="560" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="192" width="560" height="28"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -158,15 +158,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gty-31-wf2">
                                         <rect key="frame" x="0.0" y="239" width="560" height="28"/>
                                         <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Sign up"/>
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="noI-dg-5xF" eventType="touchUpInside" id="6cU-Lt-Bsj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Vhd-Fs-k5T" secondAttribute="trailing" id="130-Lz-0Rw"/>
                                     <constraint firstItem="uL5-rB-HQQ" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="6oa-Mw-MbI"/>
-                                    <constraint firstItem="Vhd-Fs-k5T" firstAttribute="top" secondItem="UyM-Np-Qgi" secondAttribute="top" id="7cs-x7-58g"/>
-                                    <constraint firstItem="Vhd-Fs-k5T" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="D2w-Mc-iSy"/>
                                     <constraint firstItem="Hqz-XF-Qva" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="HKK-NZ-BNt"/>
                                     <constraint firstAttribute="trailing" secondItem="uL5-rB-HQQ" secondAttribute="trailing" id="Vow-we-4Dh"/>
                                     <constraint firstItem="gty-31-wf2" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="Yld-v1-aqD"/>
@@ -181,7 +182,7 @@
                             </stackView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.27286111549999997" green="0.73209238450000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="UyM-Np-Qgi" firstAttribute="trailing" secondItem="MYg-Xh-lF3" secondAttribute="trailingMargin" id="cjf-Sc-Jba"/>
                             <constraint firstAttribute="bottom" secondItem="UyM-Np-Qgi" secondAttribute="bottom" constant="225" id="fbb-CX-2RO"/>
@@ -189,6 +190,14 @@
                             <constraint firstItem="UyM-Np-Qgi" firstAttribute="leading" secondItem="MYg-Xh-lF3" secondAttribute="leadingMargin" id="xeZ-Um-Kkk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bioTextField" destination="uCu-To-yvA" id="MyW-iU-g9v"/>
+                        <outlet property="emailTextField" destination="Hqz-XF-Qva" id="yL1-E5-HX9"/>
+                        <outlet property="loginButton" destination="gty-31-wf2" id="PGT-b7-GGQ"/>
+                        <outlet property="passwordTextField" destination="3oP-xg-Y7V" id="Vsb-vk-crL"/>
+                        <outlet property="urlTextField" destination="uL5-rB-HQQ" id="U9T-cL-Anp"/>
+                        <outlet property="usernameTextField" destination="Vhd-Fs-k5T" id="UJK-Pa-lzu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Uc-2P-MRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
