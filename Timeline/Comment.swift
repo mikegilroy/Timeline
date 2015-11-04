@@ -13,18 +13,18 @@ struct Comment: Equatable {
     var username: String
     var text: String
     var postID: String
-    var commentID: String
+    var identifier: String?
     
-    init(username: String, text: String, postID: String, commentID: String) {
+    init(username: String, text: String, postID: String, identifier: String? = nil) {
         
         self.username = username
         self.text = text
         self.postID = postID
-        self.commentID = commentID
+        self.identifier = identifier
     }
 }
 
 // Equatable protocol
 func == (lhs: Comment, rhs: Comment) -> Bool {
-    return ((lhs.username == rhs.username) && (lhs.commentID == rhs.commentID))
+    return ((lhs.username == rhs.username) && (lhs.identifier == rhs.identifier))
 }

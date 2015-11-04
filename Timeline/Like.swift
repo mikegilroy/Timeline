@@ -12,17 +12,17 @@ struct Like: Equatable {
     
     var username: String
     var postID: String
-    var likeID: String
+    var identifier: String?
     
-    init(username: String, postID: String, likeID: String) {
+    init(username: String, postID: String, identifier: String? = nil) {
         
         self.username = username
         self.postID = postID
-        self.likeID = likeID
+        self.identifier = identifier
     }
 }
 
 // Equatable protocol
 func == (lhs: Like, rhs: Like) -> Bool {
-    return ((lhs.username == rhs.username) && (lhs.likeID == rhs.likeID))
+    return ((lhs.username == rhs.username) && (lhs.identifier == rhs.identifier))
 }

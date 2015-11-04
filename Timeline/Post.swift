@@ -15,20 +15,20 @@ struct Post: Equatable {
     var username: String
     var comments: [Comment] = []
     var likes: [Like] = []
-    var postID: String
+    var identifier: String?
     
-    init(imageEndPoint: String, caption: String?, username: String, comments: [Comment], likes: [Like], postID: String) {
+    init(imageEndPoint: String, caption: String? = nil, username: String, comments: [Comment], likes: [Like], identifier: String? = nil) {
      
         self.imageEndPoint = imageEndPoint
         self.caption = caption
         self.username = username
         self.comments = comments
         self.likes = likes
-        self.postID = postID
+        self.identifier = identifier
     }
 }
 
 // Equatable protocol
 func == (lhs: Post, rhs: Post) -> Bool {
-    return ((lhs.username == rhs.username) && (lhs.postID == rhs.postID))
+    return ((lhs.username == rhs.username) && (lhs.identifier == rhs.identifier))
 }
