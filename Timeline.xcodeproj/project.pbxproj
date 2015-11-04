@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10B74DCB1BE974AA009F6F52 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B74DCA1BE974AA009F6F52 /* PostController.swift */; };
 		10B74DCD1BE97B70009F6F52 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B74DCC1BE97B70009F6F52 /* ImageController.swift */; };
+		10B74E171BEAC262009F6F52 /* UserSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B74E161BEAC262009F6F52 /* UserSearchResultsTableViewController.swift */; };
 		10F252941BE9565800E1A22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F252931BE9565800E1A22E /* AppDelegate.swift */; };
 		10F252991BE9565800E1A22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F252971BE9565800E1A22E /* Main.storyboard */; };
 		10F2529B1BE9565800E1A22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F2529A1BE9565800E1A22E /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		10B74DCA1BE974AA009F6F52 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		10B74DCC1BE97B70009F6F52 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		10B74E161BEAC262009F6F52 /* UserSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		10F252901BE9565800E1A22E /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F252931BE9565800E1A22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F252981BE9565800E1A22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10B74E181BEAC27B009F6F52 /* User Search Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10B74E161BEAC262009F6F52 /* UserSearchResultsTableViewController.swift */,
+			);
+			name = "User Search Controller";
+			sourceTree = "<group>";
+		};
 		10F252871BE9565800E1A22E = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 				10F252AA1BE95E2A00E1A22E /* UserSearchTableViewController.swift */,
 				10F252A71BE95CDD00E1A22E /* PostDetailTableViewController.swift */,
 				10F252A51BE95C7700E1A22E /* TimelineTableViewController.swift */,
+				10B74E181BEAC27B009F6F52 /* User Search Controller */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -201,6 +212,7 @@
 				10F252AD1BE95EF000E1A22E /* ProfileViewController.swift in Sources */,
 				10F252AB1BE95E2A00E1A22E /* UserSearchTableViewController.swift in Sources */,
 				10F252A61BE95C7700E1A22E /* TimelineTableViewController.swift in Sources */,
+				10B74E171BEAC262009F6F52 /* UserSearchResultsTableViewController.swift in Sources */,
 				10F252B31BE9612600E1A22E /* LoginSignupViewController.swift in Sources */,
 				10F252B11BE960C300E1A22E /* LoginSignupPickerViewController.swift in Sources */,
 				10B74DCD1BE97B70009F6F52 /* ImageController.swift in Sources */,
