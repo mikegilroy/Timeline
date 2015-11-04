@@ -70,6 +70,11 @@
                                             <constraint firstAttribute="height" constant="30" id="A8R-GC-oxz"/>
                                         </constraints>
                                         <state key="normal" title="Sign up"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="noI-dg-5xF" kind="show" identifier="showSignupView" id="3Wf-Ix-eMc"/>
                                         </connections>
@@ -82,6 +87,11 @@
                                             <constraint firstAttribute="height" constant="30" id="Zjn-xe-ghe"/>
                                         </constraints>
                                         <state key="normal" title="Log in"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="noI-dg-5xF" kind="show" identifier="showLoginView" id="0pd-zg-IxZ"/>
                                         </connections>
@@ -122,44 +132,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UyM-Np-Qgi">
-                                <rect key="frame" x="20" y="108" width="560" height="267"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UyM-Np-Qgi">
+                                <rect key="frame" x="20" y="108" width="560" height="280"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqz-XF-Qva">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhd-Fs-k5T">
-                                        <rect key="frame" x="0.0" y="48" width="560" height="28"/>
+                                        <rect key="frame" x="0.0" y="50" width="560" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3oP-xg-Y7V">
-                                        <rect key="frame" x="0.0" y="96" width="560" height="28"/>
+                                        <rect key="frame" x="0.0" y="100" width="560" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-To-yvA">
-                                        <rect key="frame" x="0.0" y="144" width="560" height="28"/>
+                                        <rect key="frame" x="0.0" y="150" width="560" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uL5-rB-HQQ">
-                                        <rect key="frame" x="0.0" y="192" width="560" height="28"/>
+                                        <rect key="frame" x="0.0" y="200" width="560" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gty-31-wf2">
-                                        <rect key="frame" x="0.0" y="239" width="560" height="28"/>
+                                        <rect key="frame" x="0.0" y="250" width="560" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Sign up"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="actionButtonTapped:" destination="noI-dg-5xF" eventType="touchUpInside" id="6cU-Lt-Bsj"/>
                                         </connections>
@@ -185,7 +200,7 @@
                         <color key="backgroundColor" red="0.27286111549999997" green="0.73209238450000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="UyM-Np-Qgi" firstAttribute="trailing" secondItem="MYg-Xh-lF3" secondAttribute="trailingMargin" id="cjf-Sc-Jba"/>
-                            <constraint firstAttribute="bottom" secondItem="UyM-Np-Qgi" secondAttribute="bottom" constant="225" id="fbb-CX-2RO"/>
+                            <constraint firstAttribute="bottom" secondItem="UyM-Np-Qgi" secondAttribute="bottom" priority="989" constant="225" id="fbb-CX-2RO"/>
                             <constraint firstItem="UyM-Np-Qgi" firstAttribute="top" secondItem="Qya-Bs-9lm" secondAttribute="bottom" constant="44" id="mKa-Jt-an4"/>
                             <constraint firstItem="UyM-Np-Qgi" firstAttribute="leading" secondItem="MYg-Xh-lF3" secondAttribute="leadingMargin" id="xeZ-Um-Kkk"/>
                         </constraints>
