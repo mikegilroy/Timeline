@@ -345,7 +345,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="osi-9w-KdX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="osi-9w-KdX">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="osi-9w-KdX" id="UEF-X4-xJz">
@@ -374,8 +374,14 @@
                                 <segment title="Friends"/>
                                 <segment title="Add Friend"/>
                             </segments>
+                            <connections>
+                                <action selector="modeSegmentedControlValueChanged:" destination="pgk-te-9cS" eventType="valueChanged" id="5x6-Ln-mgH"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="modeSegmentedControl" destination="4Se-dw-eeK" id="aD9-Nh-nNA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2Q-kT-hj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
