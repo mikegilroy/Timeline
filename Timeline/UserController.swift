@@ -12,7 +12,7 @@ class UserController {
     
     static let sharedController = UserController()
     
-    var currentUser: User! = UserController.mockUsers().first
+    var currentUser: User! = nil//UserController.mockUsers().first
     
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
@@ -82,12 +82,12 @@ class UserController {
     
     static func mockUsers() -> [User] {
         
-        let user1 = User(username: "mikegilroy", bio: "Londoner", url: "http://twitter.com/mike_gilroy", userID: "0001")
-        let user2 = User(username: "mediarob", bio: "So media", url: nil, userID: "0002")
-        let user3 = User(username: "instaTweed", bio: "I'm so edgey", url: "http://instagram.com/instatweed", userID: "0003")
-        let user4 = User(username: "curreel", bio: "Where are the horses at?", url: nil, userID: "0004")
-        let user5 = User(username: "charlesrose", bio: "BRB: At lunch", url: nil, userID: "0005")
-        let user6 = User(username: "gilroyben", bio: "Climbing mountains", url: "http://twitter.com/gilroyben", userID: "0006")
+        let user1 = User(username: "mikegilroy", bio: "Londoner", url: "http://twitter.com/mike_gilroy", identifier: "0001")
+        let user2 = User(username: "mediarob", bio: "So media", url: nil, identifier: "0002")
+        let user3 = User(username: "instaTweed", bio: "I'm so edgey", url: "http://instagram.com/instatweed", identifier: "0003")
+        let user4 = User(username: "curreel", bio: "Where are the horses at?", url: nil, identifier: "0004")
+        let user5 = User(username: "charlesrose", bio: "BRB: At lunch", url: nil, identifier: "0005")
+        let user6 = User(username: "gilroyben", bio: "Climbing mountains", url: "http://twitter.com/gilroyben", identifier: "0006")
         
         return [user1, user2, user3, user4, user5, user6]
     }

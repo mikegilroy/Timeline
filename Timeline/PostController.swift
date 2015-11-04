@@ -16,7 +16,7 @@ class PostController {
     
 //    Add a static function fetchTimelineForUser that takes a user and completion closure with an array of Posts parameter
     
-    static func fetchTimelineForUser(user: User, completion: (posts: [Post]) -> Void) {
+    static func fetchTimelineForUser(user: User, completion: (posts: [Post]?) -> Void) {
         completion(posts: mockPosts())
     }
     
@@ -86,18 +86,18 @@ class PostController {
     
     static func mockPosts() -> [Post] {
         
-        let like1 = Like(username: "mikegilroy", postID: "0002", likeID: "0001")
-        let like2 = Like(username: "gilroyben", postID: "0001", likeID: "0002")
-        let like3 = Like(username: "instatweed", postID: "0003", likeID: "0003")
+        let like1 = Like(username: "mikegilroy", postID: "0002", identifier: "0001")
+        let like2 = Like(username: "gilroyben", postID: "0001", identifier: "0002")
+        let like3 = Like(username: "instatweed", postID: "0003", identifier: "0003")
         
-        let comment1 = Comment(username: "curreel", text: "You are so media", postID: "0002", commentID: "0001")
-        let comment2 = Comment(username: "mediarob", text: "Nice shirt Charles", postID: "0004", commentID: "0002")
-        let comment3 = Comment(username: "charlesrose", text: "It's no lunch though", postID: "0002", commentID: "0003")
+        let comment1 = Comment(username: "curreel", text: "You are so media", postID: "0002", identifier: "0001")
+        let comment2 = Comment(username: "mediarob", text: "Nice shirt Charles", postID: "0004", identifier: "0002")
+        let comment3 = Comment(username: "charlesrose", text: "It's no lunch though", postID: "0002", identifier: "0003")
         
-        let post1 = Post(imageEndPoint: imageIdentifier, caption: "Love this place", username: "mikegilroy", comments: [], likes: [like2], postID: "0001")
-        let post2 = Post(imageEndPoint: imageIdentifier, caption: "I love media", username: "mediarob", comments: [comment1, comment3], likes: [like1], postID: "0002")
-        let post3 = Post(imageEndPoint: imageIdentifier, caption: "#nofilter", username: "instatweed", comments: [], likes: [like3], postID: "0003")
-        let post4 = Post(imageEndPoint: imageIdentifier, caption: "At lunch again", username: "charlesrose", comments: [comment2], likes: [], postID: "0004")
+        let post1 = Post(imageEndPoint: imageIdentifier, caption: "Love this place", username: "mikegilroy", comments: [], likes: [like2], identifier: "0001")
+        let post2 = Post(imageEndPoint: imageIdentifier, caption: "I love media", username: "mediarob", comments: [comment1, comment3], likes: [like1], identifier: "0002")
+        let post3 = Post(imageEndPoint: imageIdentifier, caption: "#nofilter", username: "instatweed", comments: [], likes: [like3], identifier: "0003")
+        let post4 = Post(imageEndPoint: imageIdentifier, caption: "At lunch again", username: "charlesrose", comments: [comment2], likes: [], identifier: "0004")
         
         return [post1, post2, post3, post4]
     }
