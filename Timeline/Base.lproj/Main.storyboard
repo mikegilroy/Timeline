@@ -42,20 +42,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="qsv-oF-2DP">
                                 <rect key="frame" x="20" y="108" width="560" height="267"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Timeline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xv7-G0-M2P">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="121"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Ct-8g-pKx">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="163"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Timeline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xv7-G0-M2P">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="81.5"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="45"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share moments in time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nS-co-Bgx">
+                                                <rect key="frame" x="0.0" y="81.5" width="560" height="81.5"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <animations/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="45"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share moments in time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nS-co-Bgx">
-                                        <rect key="frame" x="0.0" y="143" width="560" height="20"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ram-kP-2il">
                                         <rect key="frame" x="0.0" y="185" width="560" height="30"/>
                                         <animations/>
@@ -82,6 +88,11 @@
                                     </button>
                                 </subviews>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstItem="2Ct-8g-pKx" firstAttribute="leading" secondItem="qsv-oF-2DP" secondAttribute="leading" id="aT3-c0-9SQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Ct-8g-pKx" secondAttribute="trailing" id="lsS-t8-yNj"/>
+                                    <constraint firstItem="2Ct-8g-pKx" firstAttribute="top" secondItem="qsv-oF-2DP" secondAttribute="top" id="w5m-N7-VW4"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <animations/>
@@ -110,8 +121,73 @@
                     <view key="view" contentMode="scaleToFill" id="MYg-Xh-lF3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UyM-Np-Qgi">
+                                <rect key="frame" x="20" y="108" width="560" height="267"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhd-Fs-k5T">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="28"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqz-XF-Qva">
+                                        <rect key="frame" x="0.0" y="48" width="560" height="27.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3oP-xg-Y7V">
+                                        <rect key="frame" x="0.0" y="95.5" width="560" height="28"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-To-yvA">
+                                        <rect key="frame" x="0.0" y="143.5" width="560" height="28"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uL5-rB-HQQ">
+                                        <rect key="frame" x="0.0" y="191.5" width="560" height="27.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gty-31-wf2">
+                                        <rect key="frame" x="0.0" y="239" width="560" height="28"/>
+                                        <animations/>
+                                        <state key="normal" title="Sign up"/>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Vhd-Fs-k5T" secondAttribute="trailing" id="130-Lz-0Rw"/>
+                                    <constraint firstItem="uL5-rB-HQQ" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="6oa-Mw-MbI"/>
+                                    <constraint firstItem="Vhd-Fs-k5T" firstAttribute="top" secondItem="UyM-Np-Qgi" secondAttribute="top" id="7cs-x7-58g"/>
+                                    <constraint firstItem="Vhd-Fs-k5T" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="D2w-Mc-iSy"/>
+                                    <constraint firstItem="Hqz-XF-Qva" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="HKK-NZ-BNt"/>
+                                    <constraint firstAttribute="trailing" secondItem="uL5-rB-HQQ" secondAttribute="trailing" id="Vow-we-4Dh"/>
+                                    <constraint firstItem="gty-31-wf2" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="Yld-v1-aqD"/>
+                                    <constraint firstAttribute="trailing" secondItem="uCu-To-yvA" secondAttribute="trailing" id="Z16-2L-J9c"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hqz-XF-Qva" secondAttribute="trailing" id="hpT-nh-MBT"/>
+                                    <constraint firstAttribute="trailing" secondItem="3oP-xg-Y7V" secondAttribute="trailing" id="pQ8-4i-fS3"/>
+                                    <constraint firstAttribute="bottom" secondItem="gty-31-wf2" secondAttribute="bottom" id="q3X-Mq-Yeu"/>
+                                    <constraint firstAttribute="trailing" secondItem="gty-31-wf2" secondAttribute="trailing" id="sz2-wS-KVX"/>
+                                    <constraint firstItem="3oP-xg-Y7V" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="wf9-cd-D48"/>
+                                    <constraint firstItem="uCu-To-yvA" firstAttribute="leading" secondItem="UyM-Np-Qgi" secondAttribute="leading" id="zXi-gh-pu3"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UyM-Np-Qgi" firstAttribute="trailing" secondItem="MYg-Xh-lF3" secondAttribute="trailingMargin" id="cjf-Sc-Jba"/>
+                            <constraint firstAttribute="bottom" secondItem="UyM-Np-Qgi" secondAttribute="bottom" constant="225" id="fbb-CX-2RO"/>
+                            <constraint firstItem="UyM-Np-Qgi" firstAttribute="top" secondItem="Qya-Bs-9lm" secondAttribute="bottom" constant="44" id="mKa-Jt-an4"/>
+                            <constraint firstItem="UyM-Np-Qgi" firstAttribute="leading" secondItem="MYg-Xh-lF3" secondAttribute="leadingMargin" id="xeZ-Um-Kkk"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Uc-2P-MRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
