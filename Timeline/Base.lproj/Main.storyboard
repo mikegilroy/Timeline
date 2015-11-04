@@ -355,7 +355,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="61R-Cp-Zfz" kind="show" id="O8c-e3-hPP"/>
+                                    <segue destination="61R-Cp-Zfz" kind="show" identifier="toProfileView" id="O8c-e3-hPP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
