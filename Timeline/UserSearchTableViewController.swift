@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserSearchTableViewController: UITableViewController {
+class UserSearchTableViewController: UITableViewController, UISearchResultsUpdating {
     
     // MARK: Properties/Outlets
     
@@ -39,6 +39,9 @@ class UserSearchTableViewController: UITableViewController {
     }
     
     
+    var searchController: UISearchController!
+    
+    
     @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
     
     
@@ -57,6 +60,7 @@ class UserSearchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViewBasedOnMode()
+        setupSearchController()
     }
 
     
@@ -69,6 +73,31 @@ class UserSearchTableViewController: UITableViewController {
                print("No users found")
             }
         }
+    }
+    
+    
+    func setupSearchController() {
+        
+        let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SearchResultsController")
+        
+        searchController = UISearchController(searchResultsController: resultsController)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchTerm = searchController.searchBar.text!.lowercaseString
+        
+        let resultsController = searchController.searchResultsController as? UserSearchResultsTableViewController
+        
+        if let resultsController = resultsController {
+            resultsController.userResultsDataSource = usersDataSource.filter({$0.username.lowercaseString.containsString(searchTerm)})
+            resultsController.tableView.reloadData()
+        }
+
     }
  
     

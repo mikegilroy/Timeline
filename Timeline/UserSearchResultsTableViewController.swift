@@ -13,9 +13,11 @@ class UserSearchResultsTableViewController: UITableViewController {
     // MARK: Properties/Outlets
     
     var userResultsDataSource: [User] = []
+
     
     
     
+    // MARK: Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
