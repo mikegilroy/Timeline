@@ -36,10 +36,17 @@ class TimelineTableViewController: UITableViewController {
         PostController.fetchTimelineForUser(user) { (posts) -> Void in
             if let posts = posts {
                 self.posts = posts
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                })
             }
         }
     }
 
+    @IBAction func userRefreshedTable(sender: AnyObject) {
+        loadTimelineForUser(UserController.sharedController.currentUser)
+    }
 
     // MARK: - Table view data source
 
@@ -50,18 +57,20 @@ class TimelineTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return posts.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
 
-        // Configure the cell...
+        let post = self.posts[indexPath.row]
+        
+        cell.updateWithPost(post)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

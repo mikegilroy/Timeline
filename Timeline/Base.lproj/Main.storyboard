@@ -132,7 +132,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UyM-Np-Qgi">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UyM-Np-Qgi">
                                 <rect key="frame" x="20" y="108" width="560" height="280"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hqz-XF-Qva">
@@ -222,22 +222,63 @@
         <scene sceneID="iie-NG-rTn">
             <objects>
                 <tableViewController id="eZl-f7-hGi" customClass="TimelineTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="afa-jG-1Dx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="211" sectionHeaderHeight="28" sectionFooterHeight="28" id="afa-jG-1Dx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yDV-8R-13e">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="211" id="yDV-8R-13e" customClass="PostTableViewCell" customModule="Timeline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="211"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDV-8R-13e" id="WC0-7f-8CK">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="211"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kct-fx-1ku">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="211"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ❤️" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-y6-Ihw">
+                                            <rect key="frame" x="38" y="160" width="151" height="28"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="151" id="D2R-Oz-oiI"/>
+                                                <constraint firstAttribute="height" constant="28" id="bO4-0J-6Pi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 💬" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIQ-89-yVl">
+                                            <rect key="frame" x="413" y="160" width="149" height="28"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="149" id="WSe-So-gHd"/>
+                                                <constraint firstAttribute="height" constant="28" id="r2U-1j-azR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="t4l-y6-Ihw" secondAttribute="bottom" constant="15" id="5qn-7y-14E"/>
+                                        <constraint firstItem="t4l-y6-Ihw" firstAttribute="leading" secondItem="WC0-7f-8CK" secondAttribute="leadingMargin" constant="30" id="9Ga-cj-Wj7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="eIQ-89-yVl" secondAttribute="bottom" constant="15" id="AgQ-jX-Ntb"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kct-fx-1ku" secondAttribute="trailing" id="FjU-8B-gLA"/>
+                                        <constraint firstItem="Kct-fx-1ku" firstAttribute="top" secondItem="WC0-7f-8CK" secondAttribute="top" id="GKW-Ic-0Kc"/>
+                                        <constraint firstItem="Kct-fx-1ku" firstAttribute="centerY" secondItem="WC0-7f-8CK" secondAttribute="centerY" id="Qru-s3-oJd"/>
+                                        <constraint firstItem="Kct-fx-1ku" firstAttribute="leading" secondItem="WC0-7f-8CK" secondAttribute="leading" id="xO9-PX-9RQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="eIQ-89-yVl" secondAttribute="trailing" constant="30" id="zVd-6a-tKh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="commentsLabel" destination="eIQ-89-yVl" id="xid-z1-tIN"/>
+                                    <outlet property="likesLabel" destination="t4l-y6-Ihw" id="zT6-Kz-7tv"/>
+                                    <outlet property="postImageView" destination="Kct-fx-1ku" id="ohF-43-Vd0"/>
                                     <segue destination="RLw-q5-3Vc" kind="show" id="Fhq-Ea-zfh"/>
                                 </connections>
                             </tableViewCell>
@@ -254,6 +295,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="hIw-yI-Hla">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <attributedString key="attributedTitle"/>
+                        <connections>
+                            <action selector="userRefreshedTable:" destination="eZl-f7-hGi" eventType="valueChanged" id="Y9b-jU-f8r"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XE6-e8-evY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -678,8 +727,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Fhq-Ea-zfh"/>
         <segue reference="O8c-e3-hPP"/>
-        <segue reference="0Bk-Bi-EFa"/>
         <segue reference="OAD-NX-PUS"/>
     </inferredMetricsTieBreakers>
 </document>
