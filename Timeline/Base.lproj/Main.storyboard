@@ -238,7 +238,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="vME-qp-4H2" kind="show" id="Fhq-Ea-zfh"/>
+                                    <segue destination="RLw-q5-3Vc" kind="show" id="Fhq-Ea-zfh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -330,6 +330,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7QB-YJ-O1m">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1fS-kf-pWd">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="50" height="104"/>
@@ -361,6 +362,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="cYT-vi-zaH" id="otg-mf-FuO"/>
+                                            <segue destination="RLw-q5-3Vc" kind="show" identifier="toPostDetail" id="0Bk-Bi-EFa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -427,6 +429,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Yq6-fG-gmO"/>
+                    <connections>
+                        <outlet property="imageCollectionView" destination="7QB-YJ-O1m" id="koQ-n1-zs7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0b9-O2-3DL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -541,10 +546,11 @@
                             <outlet property="delegate" destination="vME-qp-4H2" id="iRi-c4-9ni"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="kNK-4w-ugR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfF-v7-SFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3346" y="322"/>
+            <point key="canvasLocation" x="4158" y="322"/>
         </scene>
         <!--Timeline-->
         <scene sceneID="Kfn-Os-mtb">
@@ -644,9 +650,29 @@
             </objects>
             <point key="canvasLocation" x="-8" y="1104"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZNH-rW-b1u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RLw-q5-3Vc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZL0-TC-I4v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vME-qp-4H2" kind="relationship" relationship="rootViewController" id="HtA-uQ-i6C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtT-QO-tt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3346" y="322"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="O8c-e3-hPP"/>
         <segue reference="3Wf-Ix-eMc"/>
+        <segue reference="O8c-e3-hPP"/>
+        <segue reference="0Bk-Bi-EFa"/>
     </inferredMetricsTieBreakers>
 </document>

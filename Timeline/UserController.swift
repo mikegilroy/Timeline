@@ -77,6 +77,11 @@ class UserController {
     }
     
     
+    static func unfollowUser(user: User, completion: (success: Bool) -> Void) {
+        completion(success: true)
+    }
+    
+    
 //    14. Define a static function `mockUsers()` that returns an array of sample users.
 //    15. Implement the `mockUsers()` function by returning an array of at least 3 initialized users
     
