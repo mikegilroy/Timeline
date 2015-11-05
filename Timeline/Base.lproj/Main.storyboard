@@ -326,8 +326,90 @@
                     <view key="view" contentMode="scaleToFill" id="zyn-gx-SOv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7QB-YJ-O1m">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1fS-kf-pWd">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="104"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Tz2-dE-0ih">
+                                        <rect key="frame" x="0.0" y="168" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileHeader" id="dey-Ih-II4" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="104"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Y5o-ec-nfT">
+                                            <rect key="frame" x="8" y="8" width="584" height="88"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFo-9q-4fk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="584" height="26"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhP-e7-0qF">
+                                                    <rect key="frame" x="0.0" y="32" width="584" height="25"/>
+                                                    <animations/>
+                                                    <state key="normal" title="Homepage"/>
+                                                    <connections>
+                                                        <action selector="urlButtonTapped:" destination="dey-Ih-II4" eventType="touchUpInside" id="92s-wC-EQW"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0L-eD-ipH">
+                                                    <rect key="frame" x="0.0" y="63" width="584" height="26"/>
+                                                    <animations/>
+                                                    <state key="normal" title="Follow"/>
+                                                    <connections>
+                                                        <action selector="followActionButtonTapped:" destination="dey-Ih-II4" eventType="touchUpInside" id="RQG-bW-Kij"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <animations/>
+                                        </stackView>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="Y5o-ec-nfT" firstAttribute="leading" secondItem="dey-Ih-II4" secondAttribute="leadingMargin" id="QQv-pe-E1A"/>
+                                        <constraint firstItem="Y5o-ec-nfT" firstAttribute="top" secondItem="dey-Ih-II4" secondAttribute="topMargin" id="mNq-qg-g2x"/>
+                                        <constraint firstItem="Y5o-ec-nfT" firstAttribute="trailing" secondItem="dey-Ih-II4" secondAttribute="trailingMargin" id="mxV-RR-zF6"/>
+                                        <constraint firstItem="Y5o-ec-nfT" firstAttribute="bottom" secondItem="dey-Ih-II4" secondAttribute="bottomMargin" id="nYG-gO-kuQ"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="biolLabel" destination="UFo-9q-4fk" id="Xmk-uN-AWX"/>
+                                        <outlet property="followUserButton" destination="D0L-eD-ipH" id="ipP-PP-yn0"/>
+                                        <outlet property="homepageButton" destination="VhP-e7-0qF" id="hEY-9S-J7N"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="61R-Cp-Zfz" id="alO-By-Rsd"/>
+                                    <outlet property="delegate" destination="61R-Cp-Zfz" id="0nV-Iu-hek"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7QB-YJ-O1m" secondAttribute="trailing" id="JK9-3t-9CW"/>
+                            <constraint firstItem="7QB-YJ-O1m" firstAttribute="top" secondItem="ajf-dd-Xae" secondAttribute="bottom" id="Vr9-SO-scc"/>
+                            <constraint firstItem="7QB-YJ-O1m" firstAttribute="leading" secondItem="zyn-gx-SOv" secondAttribute="leading" id="Xe2-On-2y9"/>
+                            <constraint firstItem="7QB-YJ-O1m" firstAttribute="bottom" secondItem="vWN-Zc-z1c" secondAttribute="top" id="xwj-0k-buP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Yq6-fG-gmO"/>
                 </viewController>
