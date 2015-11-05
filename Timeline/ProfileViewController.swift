@@ -106,25 +106,26 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
             
             UserController.logOutCurrentUser()
             tabBarController?.selectedViewController = tabBarController?.viewControllers![0]
-        }
-        
-        UserController.userFollowsUser(UserController.sharedController.currentUser, user2: self.user!) { (follows) -> Void in
-            if follows {
-                UserController.unfollowUser(self.user!, completion: { (success) -> Void in
-                    if success {
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.updateBasedOnUser()
-                        })
-                    }
-                })
-            } else {
-                UserController.followUser(self.user!, completion: { (success) -> Void in
-                    if success {
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.updateBasedOnUser()
-                        })
-                    }
-                })
+        } else {
+            
+            UserController.userFollowsUser(UserController.sharedController.currentUser, user2: self.user!) { (follows) -> Void in
+                if follows {
+                    UserController.unfollowUser(self.user!, completion: { (success) -> Void in
+                        if success {
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.updateBasedOnUser()
+                            })
+                        }
+                    })
+                } else {
+                    UserController.followUser(self.user!, completion: { (success) -> Void in
+                        if success {
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.updateBasedOnUser()
+                            })
+                        }
+                    })
+                }
             }
         }
     }
