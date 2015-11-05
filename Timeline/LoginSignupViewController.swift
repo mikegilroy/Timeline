@@ -23,9 +23,12 @@ class LoginSignupViewController: UIViewController {
     
     // MARK: Properties
     
+    var user: User?
+    
     enum ViewMode {
         case Login
         case Signup
+        case Edit
     }
     
     var mode: ViewMode = .Signup
@@ -36,6 +39,8 @@ class LoginSignupViewController: UIViewController {
             return !((emailTextField.text!.isEmpty) || (passwordTextField.text!.isEmpty))
         case .Signup:
             return !((emailTextField.text!.isEmpty) || (passwordTextField.text!.isEmpty) || (usernameTextField.text!.isEmpty))
+        case .Edit:
+            return !(usernameTextField.text!.isEmpty)
         }
     }
     
@@ -64,14 +69,20 @@ class LoginSignupViewController: UIViewController {
                        
                     }
                 })
+                
+            case .Edit:
+                UserController.updateUser(self.user!, username: usernameTextField.text!, bio: bioTextField.text!, url: urlTextField.text!, completion: { (success, user) -> Void in
+                    if success {
+                        // dismiss view controller
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        // present validation alert
+                        self.presentValidationAlertWithTitle("Unable to Update User", text: "Please check your information and try again.")
+                    }
+                })
             }
         } else {
-            switch mode {
-            case .Signup:
-                 self.presentValidationAlertWithTitle("Missing something?", text: "You'll need to enter a valid username, email and password before we can sign you up!")
-            case .Login:
-                self.presentValidationAlertWithTitle("We don't recognise that", text: "Please make sure you've entered the correct email and password")
-            }
+            presentValidationAlertWithTitle("Missing Information", text: "Please check your information and try again.")
         }
     }
     
@@ -102,6 +113,20 @@ class LoginSignupViewController: UIViewController {
             passwordTextField.hidden = false
             bioTextField.hidden = true
             urlTextField.hidden = true
+            
+        case .Edit:
+            loginButton.setTitle("Update", forState: .Normal)
+            usernameTextField.hidden = false
+            emailTextField.hidden = true
+            passwordTextField.hidden = true
+            bioTextField.hidden = false
+            urlTextField.hidden = false
+            
+            if let user = user {
+                usernameTextField.text = user.username
+                bioTextField.text = user.bio
+                urlTextField.text = user.url
+            }
         }
     }
 
@@ -110,6 +135,12 @@ class LoginSignupViewController: UIViewController {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    
+    func updateWithUser(user: User) {
+        self.user = user
+        mode = .Edit
     }
     
 }
