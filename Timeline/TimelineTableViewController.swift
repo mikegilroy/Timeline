@@ -62,7 +62,7 @@ class TimelineTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("postCommentCell", forIndexPath: indexPath) as! PostTableViewCell
 
         let post = self.posts[indexPath.row]
         
@@ -107,14 +107,21 @@ class TimelineTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toPostDetail" {
+            
+            let postDetailScene = segue.destinationViewController as! PostDetailTableViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let post = posts[indexPath.row]
+                postDetailScene.post = post
+                postDetailScene.updateBasedOnPost()
+            }
+        }
     }
-    */
+    
 
 }

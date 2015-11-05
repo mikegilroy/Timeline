@@ -13,12 +13,14 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
     
     // MARK: Properties/OUtlets
     
+    @IBOutlet weak var collectionView: UICollectionView!
     var user: User?
     var userPosts: [Post] = []
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    
     @IBOutlet weak var editBarButton: UIBarButtonItem!
+    
+    
     // MARK: Functions
 
     override func viewDidLoad() {
@@ -143,6 +145,17 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
             _ = editProfileScene.view
             
             editProfileScene.updateWithUser(user!)
+        }
+        
+        if segue.identifier == "toPostDetail" {
+            
+            let postDetailScene = segue.destinationViewController as! PostDetailTableViewController
+            
+            if let indexPath = collectionView.indexPathForCell(sender as! ImageCollectionViewCell) {
+                let post = userPosts[indexPath.row]
+                postDetailScene.post = post
+            }
+            
         }
     }
     
