@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
+    @IBOutlet weak var editBarButton: UIBarButtonItem!
     // MARK: Functions
 
     override func viewDidLoad() {
@@ -26,10 +27,17 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         
         if user == nil {
             self.user = UserController.sharedController.currentUser
+            editBarButton.enabled = true
         }
         updateBasedOnUser()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        UserController.userForIdentifier(user!.identifier!) { (user) -> Void in
+            self.user = user
+            self.updateBasedOnUser()
+        }
+    }
 
     func updateBasedOnUser() {
         if let user = user {
@@ -121,14 +129,21 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         }
     }
     
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toEditProfile" {
+            
+            let editProfileScene = segue.destinationViewController as! LoginSignupViewController
+            
+            _ = editProfileScene.view
+            
+            editProfileScene.updateWithUser(user!)
+        }
     }
-    */
+    
 
 }

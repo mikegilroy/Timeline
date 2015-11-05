@@ -428,8 +428,15 @@
                             <constraint firstItem="7QB-YJ-O1m" firstAttribute="bottom" secondItem="vWN-Zc-z1c" secondAttribute="top" id="xwj-0k-buP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Yq6-fG-gmO"/>
+                    <navigationItem key="navigationItem" id="Yq6-fG-gmO">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Edit" id="ng5-Dd-Jaj">
+                            <connections>
+                                <segue destination="noI-dg-5xF" kind="presentation" identifier="toEditProfile" id="OAD-NX-PUS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="editBarButton" destination="ng5-Dd-Jaj" id="ZNe-dJ-BSe"/>
                         <outlet property="imageCollectionView" destination="7QB-YJ-O1m" id="koQ-n1-zs7"/>
                     </connections>
                 </viewController>
@@ -671,8 +678,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Wf-Ix-eMc"/>
         <segue reference="O8c-e3-hPP"/>
         <segue reference="0Bk-Bi-EFa"/>
+        <segue reference="OAD-NX-PUS"/>
     </inferredMetricsTieBreakers>
 </document>
