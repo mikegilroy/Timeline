@@ -33,8 +33,8 @@ class PostDetailTableViewController: UITableViewController {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         self.headerImageView.image = image
                         if let post = self.post {
-                            self.likesLabel.text = " likes"
-                            self.commentsLabel.text = " comments"
+                            self.likesLabel.text = "\(post.likes.count) likes"
+                            self.commentsLabel.text = "\(post.comments.count) comments"
                         }
                     })
                 }
