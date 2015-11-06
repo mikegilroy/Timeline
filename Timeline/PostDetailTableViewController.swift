@@ -13,9 +13,11 @@ class PostDetailTableViewController: UITableViewController {
     // MARK: Properties/Outlets
     
     @IBOutlet weak var headerImageView: UIImageView!
+
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
 
+    
     var post: Post?
     
     
@@ -23,7 +25,6 @@ class PostDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateBasedOnPost()
     }
 
     func updateBasedOnPost() {
@@ -31,12 +32,14 @@ class PostDetailTableViewController: UITableViewController {
                 if let image = image {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         self.headerImageView.image = image
+                        if let post = self.post {
+                            self.likesLabel.text = " likes"
+                            self.commentsLabel.text = " comments"
+                        }
                     })
                 }
             })
-            
-            self.likesLabel.text = "\(post!.likes.count) likes"
-            self.commentsLabel.text = "\(post!.comments.count) comments"
+        
         tableView.reloadData()
     }
 
@@ -89,7 +92,7 @@ class PostDetailTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (post?.comments.count)!
+        return (post!.comments.count)
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

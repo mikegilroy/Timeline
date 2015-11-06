@@ -154,6 +154,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
             if let indexPath = collectionView.indexPathForCell(sender as! ImageCollectionViewCell) {
                 let post = userPosts[indexPath.row]
                 postDetailScene.post = post
+                postDetailScene.updateBasedOnPost()
             }
             
         }

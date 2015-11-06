@@ -37,7 +37,9 @@ class PostTableViewCell: UITableViewCell {
         
         ImageController.imageForIdentifier(post.imageEndPoint) { (image) -> Void in
             if let image = image {
-                self.imageView?.image = image
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.postImageView.image = image
+                })
             }
         }
     }

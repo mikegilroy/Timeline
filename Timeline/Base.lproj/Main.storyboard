@@ -228,7 +228,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="211" id="yDV-8R-13e" customClass="PostTableViewCell" customModule="Timeline" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postTableViewCell" rowHeight="211" id="yDV-8R-13e" customClass="PostTableViewCell" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="211"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDV-8R-13e" id="WC0-7f-8CK">
@@ -239,17 +239,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="211"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ❤️" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-y6-Ihw">
-                                            <rect key="frame" x="38" y="160" width="151" height="28"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="151" id="D2R-Oz-oiI"/>
-                                                <constraint firstAttribute="height" constant="28" id="bO4-0J-6Pi"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 💬" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIQ-89-yVl">
                                             <rect key="frame" x="413" y="160" width="149" height="28"/>
                                             <animations/>
@@ -259,6 +248,17 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ❤️" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-y6-Ihw">
+                                            <rect key="frame" x="38" y="160" width="151" height="28"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="151" id="D2R-Oz-oiI"/>
+                                                <constraint firstAttribute="height" constant="28" id="bO4-0J-6Pi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -276,10 +276,10 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <outlet property="commentsLabel" destination="eIQ-89-yVl" id="xid-z1-tIN"/>
-                                    <outlet property="likesLabel" destination="t4l-y6-Ihw" id="zT6-Kz-7tv"/>
-                                    <outlet property="postImageView" destination="Kct-fx-1ku" id="ohF-43-Vd0"/>
-                                    <segue destination="RLw-q5-3Vc" kind="show" identifier="toPostDetail" id="Fhq-Ea-zfh"/>
+                                    <outlet property="commentsLabel" destination="eIQ-89-yVl" id="yaq-IP-uhK"/>
+                                    <outlet property="likesLabel" destination="t4l-y6-Ihw" id="0E1-Uf-AyV"/>
+                                    <outlet property="postImageView" destination="Kct-fx-1ku" id="1Wq-oy-h6O"/>
+                                    <segue destination="vME-qp-4H2" kind="show" identifier="toPostDetail" id="pqS-E6-mHZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -701,9 +701,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="commentsLabel" destination="2jt-Hd-lBg" id="lMa-4J-cv3"/>
+                        <outlet property="commentsLabel" destination="2jt-Hd-lBg" id="BYh-IY-k8b"/>
                         <outlet property="headerImageView" destination="3WK-xe-u3Y" id="5fF-gG-NJS"/>
-                        <outlet property="likesLabel" destination="xvg-jG-JIO" id="tlL-0c-Lgf"/>
+                        <outlet property="likesLabel" destination="xvg-jG-JIO" id="eQm-WJ-gx7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfF-v7-SFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -808,29 +808,10 @@
             </objects>
             <point key="canvasLocation" x="-8" y="1104"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZNH-rW-b1u">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RLw-q5-3Vc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZL0-TC-I4v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vME-qp-4H2" kind="relationship" relationship="rootViewController" id="HtA-uQ-i6C"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OtT-QO-tt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3346" y="322"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="pqS-E6-mHZ"/>
         <segue reference="O8c-e3-hPP"/>
-        <segue reference="mX0-K4-8fx"/>
         <segue reference="OAD-NX-PUS"/>
     </inferredMetricsTieBreakers>
 </document>
