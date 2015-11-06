@@ -332,6 +332,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <state key="normal" title="Submit"/>
+                            <connections>
+                                <action selector="submitButtonTapped:" destination="Z3H-fW-Apv" eventType="touchUpInside" id="O0i-o2-OBe"/>
+                            </connections>
                         </button>
                         <sections>
                             <tableViewSection id="6tR-7e-U5a">
@@ -348,6 +351,9 @@
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Z3H-fW-Apv" id="OlL-y2-jhR"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -368,7 +374,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="PGv-PN-zKI">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ATK-QU-KtX"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ATK-QU-KtX">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="Z3H-fW-Apv" id="cjU-hf-24K"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addPhotoButton" destination="BLk-Vt-UZp" id="p89-ZB-71d"/>

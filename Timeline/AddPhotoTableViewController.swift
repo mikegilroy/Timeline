@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPhotoTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddPhotoTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     // MARK: Properties / Outlets
     
@@ -16,8 +16,32 @@ class AddPhotoTableViewController: UITableViewController, UIImagePickerControlle
     @IBOutlet weak var captionTextField: UITextField!
     
     var image: UIImage?
+    var caption: String?
     
     
+    // MARK: Actions
+    
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    @IBAction func submitButtonTapped(sender: UIButton) {
+        if let image = self.image {
+            PostController.addPost(image, caption: caption, completion: { (success, post) -> Void in
+                if post != nil {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    let failedUploadAlert = UIAlertController(title: "Upload failed", message: "Please check network connection and try again", preferredStyle: .Alert)
+                    failedUploadAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(failedUploadAlert, animated: true, completion: nil)
+                }
+            })
+            
+        } else {
+            let failedUploadAlert = UIAlertController(title: "No image selected", message: "Please add an image and try again", preferredStyle: .Alert)
+            failedUploadAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(failedUploadAlert, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func addPhotoButtonTapped(sender: UIButton) {
     
@@ -26,6 +50,7 @@ class AddPhotoTableViewController: UITableViewController, UIImagePickerControlle
         imagePicker.delegate = self
         
         let imagePickerAlert = UIAlertController(title: "Upload photo from", message: nil, preferredStyle: .ActionSheet)
+        imagePickerAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
 
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
             
@@ -56,6 +81,17 @@ class AddPhotoTableViewController: UITableViewController, UIImagePickerControlle
         self.addPhotoButton.setBackgroundImage(image, forState: .Normal)
         self.addPhotoButton.setTitle("", forState: .Normal)
         picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.caption = textField.text
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.caption = textField.text
+        textField.resignFirstResponder()
+        return true
     }
 
     /*
