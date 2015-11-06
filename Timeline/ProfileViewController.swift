@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class ProfileViewController: UIViewController, UICollectionViewDataSource, ProfileHeaderCollectionReusableViewDelegate {
+class ProfileViewController: UIViewController, UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout, ProfileHeaderCollectionReusableViewDelegate {
     
     // MARK: Properties/OUtlets
     
@@ -43,6 +43,9 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
 
     func updateBasedOnUser() {
         if let user = user {
+            if user == UserController.sharedController.currentUser {
+                self.editBarButton.enabled = true
+            }
             title = user.username
             PostController.postsForUser(user) { (posts) -> Void in
                 if let posts = posts {
@@ -77,6 +80,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
     }
     
     
+    
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
         let supplementaryView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "profileHeader", forIndexPath: indexPath) as! ProfileHeaderCollectionReusableView
@@ -85,6 +89,18 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         supplementaryView.delegate = self
         
         return supplementaryView
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: (self.view.frame.size.width/3) - 1, height: (self.view.frame.size.width/3) - 1)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 1
     }
     
     
