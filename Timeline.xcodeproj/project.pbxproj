@@ -14,6 +14,7 @@
 		10B4BD491BF14E0E00D93604 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B4BD481BF14E0E00D93604 /* libicucore.tbd */; };
 		10B4BD4B1BF14E1300D93604 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B4BD4A1BF14E1300D93604 /* Security.framework */; };
 		10B4BD4D1BF14E2C00D93604 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B4BD4C1BF14E2C00D93604 /* SystemConfiguration.framework */; };
+		10B4BD4F1BF14FC000D93604 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B4BD4E1BF14FC000D93604 /* FirebaseController.swift */; };
 		10B74DCB1BE974AA009F6F52 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B74DCA1BE974AA009F6F52 /* PostController.swift */; };
 		10B74DCD1BE97B70009F6F52 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B74DCC1BE97B70009F6F52 /* ImageController.swift */; };
 		10B74E171BEAC262009F6F52 /* UserSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B74E161BEAC262009F6F52 /* UserSearchResultsTableViewController.swift */; };
@@ -60,6 +61,7 @@
 		10B4BD481BF14E0E00D93604 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		10B4BD4A1BF14E1300D93604 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		10B4BD4C1BF14E2C00D93604 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		10B4BD4E1BF14FC000D93604 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseController.swift; path = ../FirebaseController.swift; sourceTree = "<group>"; };
 		10B74DCA1BE974AA009F6F52 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		10B74DCC1BE97B70009F6F52 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		10B74E161BEAC262009F6F52 /* UserSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchResultsTableViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				10B74DCA1BE974AA009F6F52 /* PostController.swift */,
 				10F252BD1BE967C300E1A22E /* UserController.swift */,
 				10B74DCC1BE97B70009F6F52 /* ImageController.swift */,
+				10B4BD4E1BF14FC000D93604 /* FirebaseController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				10F252BC1BE9658500E1A22E /* Like.swift in Sources */,
 				10F252A81BE95CDD00E1A22E /* PostDetailTableViewController.swift in Sources */,
 				10F252941BE9565800E1A22E /* AppDelegate.swift in Sources */,
+				10B4BD4F1BF14FC000D93604 /* FirebaseController.swift in Sources */,
 				10F252AF1BE95FCB00E1A22E /* AddPhotoTableViewController.swift in Sources */,
 				10B74DCB1BE974AA009F6F52 /* PostController.swift in Sources */,
 				10B74E441BEC1A38009F6F52 /* PostCommentTableViewCell.swift in Sources */,
