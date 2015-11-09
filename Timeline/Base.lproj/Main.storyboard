@@ -232,7 +232,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="211"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDV-8R-13e" id="WC0-7f-8CK">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="211"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="210.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kct-fx-1ku">
@@ -343,7 +343,7 @@
                                         <rect key="frame" x="0.0" y="309" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eaa-eY-MED" id="Bi6-Vz-mAb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4T-DM-FTe">
@@ -835,8 +835,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pqS-E6-mHZ"/>
-        <segue reference="O8c-e3-hPP"/>
+        <segue reference="aEb-wo-shg"/>
+        <segue reference="mX0-K4-8fx"/>
         <segue reference="OAD-NX-PUS"/>
     </inferredMetricsTieBreakers>
 </document>
