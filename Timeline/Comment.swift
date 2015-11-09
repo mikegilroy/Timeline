@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Comment: Equatable {
+struct Comment: Equatable, FirebaseType {
+    
+    private let postKey = "post"
+    private let usernameKey = "username"
+    private let textKey = "text"
     
     var username: String
     var text: String
@@ -22,6 +26,41 @@ struct Comment: Equatable {
         self.postID = postID
         self.identifier = identifier
     }
+    
+    
+    var endpoint: String {
+        get {
+            return "/posts/\(self.postID)/comments/"
+        }
+    }
+    
+    var jsonValue: [String: AnyObject]? {
+        get {
+            return [
+                postKey : self.postID,
+                textKey : self.text,
+                usernameKey : self.username
+                ]
+        }
+    }
+    
+    init?(json: [String: AnyObject], identifier: String) {
+        
+        guard let username = json[usernameKey] as? String,
+            let text = json[textKey] as? String,
+            let postID = json[postKey] as? String else {
+                self.username = ""
+                self.postID = ""
+                self.text = ""
+                return
+        }
+        
+        self.username = username
+        self.postID = postID
+        self.text = text
+        self.identifier = identifier
+    }
+    
 }
 
 // Equatable protocol
