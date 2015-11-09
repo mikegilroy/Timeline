@@ -10,9 +10,9 @@ import Foundation
 
 struct Comment: Equatable, FirebaseType {
     
-    private let postKey = "post"
-    private let usernameKey = "username"
-    private let textKey = "text"
+    private let kPostID = "post"
+    private let kUsername = "username"
+    private let kText = "text"
     
     var username: String
     var text: String
@@ -29,26 +29,18 @@ struct Comment: Equatable, FirebaseType {
     
     
     var endpoint: String {
-        get {
             return "/posts/\(self.postID)/comments/"
-        }
     }
     
     var jsonValue: [String: AnyObject]? {
-        get {
-            return [
-                postKey : self.postID,
-                textKey : self.text,
-                usernameKey : self.username
-                ]
-        }
+            return [ kPostID : self.postID, kText : self.text, kUsername : self.username ]
     }
     
     init?(json: [String: AnyObject], identifier: String) {
         
-        guard let username = json[usernameKey] as? String,
-            let text = json[textKey] as? String,
-            let postID = json[postKey] as? String else {
+        guard let username = json[kUsername] as? String,
+            let text = json[kText] as? String,
+            let postID = json[kPostID] as? String else {
                 self.username = ""
                 self.postID = ""
                 self.text = ""
