@@ -41,7 +41,7 @@ class FirebaseController {
 
 
 protocol FirebaseType {
-    var identifier: [String]? { get set }
+    var identifier: String? { get set }
     
     var endpoint: String { get }
     
@@ -52,4 +52,29 @@ protocol FirebaseType {
     mutating func save()
     
     func delete()
+}
+
+extension FirebaseType {
+    
+    mutating func save() {
+        
+        let endpointBase : Firebase
+        
+        if let identifier = self.identifier {
+            endpointBase = FirebaseController.base.childByAppendingPath(endpoint).childByAppendingPath(identifier)
+        } else {
+            endpointBase = FirebaseController.base.childByAppendingPath(endpoint).childByAutoId()
+            self.identifier = endpointBase.key
+        }
+        endpointBase.updateChildValues(self.jsonValue)
+    }
+    
+    func delete() {
+        
+        if let identifier = identifier {
+            let endpointBase: Firebase = FirebaseController.base.childByAppendingPath(endpoint).childByAppendingPath(identifier)
+            
+            endpointBase.removeValue()
+        }
+    }
 }
