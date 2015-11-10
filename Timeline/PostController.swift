@@ -24,61 +24,131 @@ class PostController {
 //    Add a static function addPost that takes an image, optional caption, and completion closure with a success Boolean parameter and optional Post parameter
     
     static func addPost(image: UIImage, caption: String?, completion: (success: Bool, post: Post?) -> Void) {
+        ImageController.uploadImage(image) { (identifier) -> Void in
+            
+            if let identifier = identifier {
+                var post = Post(imageEndPoint: identifier, caption: caption, username: UserController.sharedController.currentUser.username)
+                post.save()
+                completion(success: true, post: post)
+            } else {
+                completion(success: false, post: nil)
+            }
+            
+        }
+        
         completion(success: true, post: mockPosts().first)
     }
     
 //    Add a static function postFromIdentifier that takes an identifier and completion closure with optional Post parameter
     
-    static func postFromIndentifier(indetifier: String, completion: (post: Post?) -> Void) {
-        completion(post: mockPosts().first)
+    static func postFromIndentifier(identifier: String, completion: (post: Post?) -> Void) {
+        FirebaseController.dataAtEndpoint("posts/\(identifier)") { (data) -> Void in
+            if let data = data as? [String: AnyObject] {
+                let post = Post(json: data, identifier: identifier)
+                completion(post: post)
+            } else {
+                completion(post: nil)
+            }
+        }
     }
     
     
 //    Add a static function postsForUser that takes a User and completion closure with optional array of Post objects parameter
     
     static func postsForUser(user: User, completion: (posts: [Post]?) -> Void) {
-        completion(posts: mockPosts())
+        FirebaseController.base.childByAppendingPath("posts").queryOrderedByChild("username").queryEqualToValue(user.username).observeSingleEventOfType(.Value, withBlock: { (snapshot) -> Void in
+            if let postDictionaries = snapshot.value as? [String: AnyObject] {
+                let posts = postDictionaries.flatMap({Post(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+                
+                let orderedPosts = orderPosts(posts)
+                completion(posts: orderedPosts)
+            } else {
+                completion(posts: nil)
+            }
+        })
     }
     
     
 //    Add a static function deletePost that takes a Post and completion closure with a success Boolean parameter
     
     static func deletePost(post: Post, completion: (success: Bool) -> Void) {
-        completion(success: true)
+        post.delete()
     }
     
     
 //    Add a static function addCommentWithTextToPost that takes a String, Post, and completion closure with a success Boolean parameter and optional Post parameter
     
     static func addCommentWithTextToPost(text: String, post: Post, completion: (success: Bool, post: Post?) -> Void) {
-        completion(success: true, post: mockPosts().first)
+       
+        if let postID = post.identifier {
+            var comment = Comment(username: UserController.sharedController.currentUser.username, text: text, postID: postID)
+            comment.save()
+            
+            PostController.postFromIndentifier(postID, completion: { (post) -> Void in
+                completion(success: true, post: post)
+            })
+        } else {
+            var post = post
+            post.save()
+            
+            var comment = Comment(username: UserController.sharedController.currentUser.username, text: text, postID: post.identifier!)
+            comment.save()
+            
+            PostController.postFromIndentifier(comment.postID, completion: { (post) -> Void in
+                completion(success: true, post: post)
+            })
+        }
     }
     
     
 //    Add a static function deleteComment that takes a Comment and completion closure with a success Boolean parameter and optional Post parameter
     
     static func deleteComment(comment: Comment, completion: (success: Bool, post: Post?) -> Void) {
-        completion(success: true, post: mockPosts().first)
+        comment.delete()
+        
+        postFromIndentifier(comment.postID) { (post) -> Void in
+            completion(success: true, post: post)
+        }
     }
     
     
 //    Add a static function addLikeToPost that takes a Post, and completion closure with a success Boolean parameter and optional Post parameter
     
     static func addLikeToPost(post: Post, completion: (success: Bool, post: Post?) -> Void) {
-        completion(success: true, post: mockPosts().first)
+        
+        if let postID = post.identifier {
+            var like = Like(username: UserController.sharedController.currentUser.username, postID: postID)
+            like.save()
+            
+        } else {
+            var post = post
+            post.save()
+            
+            var like = Like(username: UserController.sharedController.currentUser.username, postID: post.identifier!)
+            like.save()
+        }
+        
+        PostController.postFromIndentifier(post.identifier!, completion: { (post) -> Void in
+            completion(success: true, post: post)
+        })
     }
     
 //    Add a static function deleteLike that takes a Like and completion closure with a success Boolean parameter and optional Post parameter
     
     static func deleteLike(like: Like, completion: (success: Bool, post: Post?) -> Void) {
-        completion(success: true, post: mockPosts().first)
+        
+        like.delete()
+        
+        postFromIndentifier(like.postID) { (post) -> Void in
+            completion(success: true, post: post)
+        }
     }
     
     
 //    Add a static function orderPosts that takes an array of Post objects and returns a sorted array of Post objects
     
     static func orderPosts(posts: [Post]) -> [Post] {
-        return []
+        return posts.sort({$0.identifier > $1.identifier})
     }
     
     

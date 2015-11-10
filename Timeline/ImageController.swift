@@ -17,7 +17,7 @@ class ImageController {
 //    Add a static function uploadImage that takes an image and completion closure with an identifier String parameter
 //    note: We use an identifier for the image instead of a URL because we are uploading to Firebase. If we were uploading to Amazon S3 or other cloud service, we would probably return a URL instead of identifier.
     
-    static func uploadImage(image: UIImage, completion: (identifier: String) -> Void) {
+    static func uploadImage(image: UIImage, completion: (identifier: String?) -> Void) {
         completion(identifier: mockImageIdentifier)
     }
 
