@@ -32,7 +32,7 @@ struct Comment: Equatable, FirebaseType {
             return "/posts/\(self.postID)/comments/"
     }
     
-    var jsonValue: [String: AnyObject]? {
+    var jsonValue: [String: AnyObject] {
             return [ kPostID : self.postID, kText : self.text, kUsername : self.username ]
     }
     

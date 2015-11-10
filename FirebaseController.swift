@@ -45,7 +45,7 @@ protocol FirebaseType {
     
     var endpoint: String { get }
     
-    var jsonValue: [String: AnyObject]? { get }
+    var jsonValue: [String: AnyObject] { get }
     
     init?(json: [String: AnyObject], identifier: String)
     

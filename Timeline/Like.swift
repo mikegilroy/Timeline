@@ -24,7 +24,7 @@ struct Like: Equatable, FirebaseType {
         self.identifier = identifier
     }
     
-    var jsonValue: [String: AnyObject]? {
+    var jsonValue: [String: AnyObject] {
         return [ kPostID: self.postID, kUsername: self.username ]
     }
     
