@@ -24,7 +24,7 @@ struct Post: Equatable, FirebaseType {
     var identifier: String?
     
     var endpoint: String {
-        return "/posts/\(self.identifier)"
+        return "posts"
     }
     
     var jsonValue: [String: AnyObject] {
