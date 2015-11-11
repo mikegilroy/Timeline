@@ -713,15 +713,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="jWj-jp-8OO">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="x7d-sr-cUT">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NSt-2e-GH4">
-                                <rect key="frame" x="20" y="7" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Like"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Like" id="fmu-dP-A46">
                             <connections>
-                                <action selector="likeButtonTapped:" destination="vME-qp-4H2" id="ktN-Fb-8AH"/>
+                                <action selector="likeButtonTapped:" destination="vME-qp-4H2" id="zhB-iG-ilb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

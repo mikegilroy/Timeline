@@ -64,8 +64,6 @@ class PostController {
             }
             
         }
-        
-        completion(success: true, post: mockPosts().first)
     }
     
 //    Add a static function postFromIdentifier that takes an identifier and completion closure with optional Post parameter
@@ -177,7 +175,7 @@ class PostController {
 //    Add a static function orderPosts that takes an array of Post objects and returns a sorted array of Post objects
     
     static func orderPosts(posts: [Post]) -> [Post] {
-        return posts.sort({$0.identifier > $1.identifier})
+        return posts.sort({$0.0.identifier > $0.1.identifier})
     }
     
     

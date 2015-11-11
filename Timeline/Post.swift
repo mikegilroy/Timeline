@@ -46,6 +46,7 @@ struct Post: Equatable, FirebaseType {
         self.username = username
         self.imageEndPoint = imageEndPoint
         self.caption = json[kCaption] as? String
+        self.identifier = identifier
         
         if let commentDictionaries = json[kComments] as? [String: AnyObject] {
             self.comments = commentDictionaries.flatMap({Comment(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
