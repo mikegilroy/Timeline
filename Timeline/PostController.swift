@@ -17,7 +17,36 @@ class PostController {
 //    Add a static function fetchTimelineForUser that takes a user and completion closure with an array of Posts parameter
     
     static func fetchTimelineForUser(user: User, completion: (posts: [Post]?) -> Void) {
-        completion(posts: mockPosts())
+        UserController.followedByUser(user) { (users) -> Void in
+            var allPosts: [Post] = []
+            
+            let group = dispatch_group_create()
+            
+            dispatch_group_enter(group)
+            PostController.postsForUser(UserController.sharedController.currentUser, completion: { (posts) -> Void in
+                if let posts = posts {
+                        allPosts += posts
+                }
+                dispatch_group_leave(group)
+            })
+            
+            
+            if let users = users {
+                for user in users {
+                    dispatch_group_enter(group)
+                    PostController.postsForUser(user, completion: { (posts) -> Void in
+                        if let posts = posts {
+                               allPosts += posts
+                        }
+                        dispatch_group_leave(group)
+                    })
+                }
+            }
+            dispatch_group_notify(group, dispatch_get_main_queue(), { () -> Void in
+                let orderedPosts = orderPosts(allPosts)
+                completion(posts: orderedPosts)
+            })
+        }
     }
     
     
@@ -84,7 +113,7 @@ class PostController {
             var comment = Comment(username: UserController.sharedController.currentUser.username, text: text, postID: postID)
             comment.save()
             
-            PostController.postFromIndentifier(postID, completion: { (post) -> Void in
+            PostController.postFromIndentifier(comment.postID, completion: { (post) -> Void in
                 completion(success: true, post: post)
             })
         } else {

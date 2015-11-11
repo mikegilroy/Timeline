@@ -20,7 +20,8 @@ class TimelineTableViewController: UITableViewController {
         loadTimelineForUser(UserController.sharedController.currentUser)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         if let currentUser = UserController.sharedController.currentUser {
             if posts.count > 0 {
                 // load timeline for current user
@@ -41,6 +42,8 @@ class TimelineTableViewController: UITableViewController {
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                 })
+            } else {
+                self.refreshControl?.endRefreshing()
             }
         }
     }
